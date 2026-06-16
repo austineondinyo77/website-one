@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -743,4 +744,742 @@
 
 </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone & Electronics - HubKe</title>
+  <style>
+    * {
+       margin: 0; padding: 0; 
+       box-sizing: border-box; 
+      }
+
+    body { 
+        font-family: Arial, sans-serif; 
+        background: #f4f4f4;
+        padding-top: 70px; 
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: #222;
+      padding: 15px 20px;
+      display: right 25%;
+      justify-content: right;
+      align-items: center;
+      position: relative;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    header h1 {
+       color: white; font-size: 18px; 
+      }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    #user-name {
+       color: #ccc; font-size: 13px; 
+      }
+
+    .logout-btn {
+      background: none;
+      border: 1px solid red;
+      color: red;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 13px;
+      margin:10px; width:auto;
+    }
+
+    .logout-btn:hover {
+       background: red; color: white; 
+      }
+
+    /* ── CART ── */
+    .cart-area {
+      position: flex;
+      display: block;
+      color: white;
+      cursor: pointer;
+      font-size: 20px;
+      right: 100%;
+      left: 0%;
+
+    }
+
+    #cart-count {
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 7px;
+      font-size: 13px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #cart-box {
+      display: right;
+      background: white;
+      border: 1px solid #ccc;
+      padding: 15px;
+      position: fixed;
+      right: 100%;
+      top: 35px;
+      width: 300px;
+      z-index: 999;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      color: black;
+    }
+
+    #cart-box h3 {
+       color: red; margin-bottom: 10px; 
+      }
+    #cart-items {
+       list-style: none; padding: 0; max-height: 200px; overflow-y: auto; 
+      }
+
+    #cart-items li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+    }
+
+    #cart-items li button {
+      background: none;
+      border: none;
+      color: red;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .close-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 8px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* ── NAV ── */
+    .menu-btn {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: red;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background: #333;
+      position: absolute;
+      top: 55px;
+      right: 0;
+      width: 200px;
+      z-index: 999;
+    }
+
+    .nav-links a {
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover {
+       background: #555; 
+      }
+    .nav-links.open {
+       display: flex; 
+      }
+
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-overlay.open {
+       display: flex; 
+      }
+
+    .modal {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      width: 90%;
+      max-width: 420px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .modal h2 {
+      color: red;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .modal p {
+      color: #444;
+      margin-bottom: 12px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .modal .close-modal {
+      position: absolute;
+      top: 12px; right: 15px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: #888;
+    }
+
+    .modal .close-modal:hover {
+       color: red; 
+      }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+    }
+
+    .contact-item span {
+       font-size: 24px; 
+      }
+    .contact-item div {
+       font-size: 14px; 
+      }
+    .contact-item div strong {
+       display: block; color: #222; 
+      }
+    .contact-item div a {
+      color: red;
+      text-decoration: none;
+    }
+
+    .help-item {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+      border-left: 4px solid red;
+    }
+
+    .help-item h4 {
+       color: #222; margin-bottom: 4px; font-size: 14px; 
+      }
+    .help-item p {
+       color: #666; font-size: 13px; margin: 0; 
+      }
+
+    .about-section {
+      background: #f9f9f9;
+      border-radius: 8px;
+      padding: 12px 15px;
+      margin-bottom: 10px;
+    }
+
+    .about-section h4 {
+      color: red;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .about-section p {
+       color: #555; font-size: 13px; margin: 0; 
+      }
+
+    /* ── SEARCH & FILTER ── */
+    .controls {
+      padding: 15px 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      background: white;
+      border-bottom: 1px solid #eee;
+    }
+
+    .controls input {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 220px;
+    }
+
+    .controls select {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    /* ── PRODUCTS ── */
+    .section-title {
+      padding: 20px 20px 10px;
+      color: red;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 10px 20px 30px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover { transform: translateY(-4px); }
+
+    .product-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      background: #f0f0f0;
+    }
+
+    .card-body {
+       padding: 12px; 
+      }
+    .card-body h3 {
+       font-size: 15px; margin-bottom: 5px; color: #222; 
+      }
+    .card-body .price {
+       color: red; font-weight: bold; font-size: 16px; margin-bottom: 5px; 
+      }
+    .card-body .stock {
+       font-size: 12px; color: #888; margin-bottom: 10px; 
+      }
+    .stock.low {
+       color: orange; 
+      }
+    .stock.out {
+       color: red; 
+      }
+
+    .add-btn {
+      width: 100%;
+      padding: 8px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .add-btn:hover {
+       background: darkred; 
+      }
+    .add-btn:disabled {
+       background: #ccc; cursor: not-allowed; 
+      }
+
+    /* ── TOAST ── */
+    #toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #333;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 14px;
+      display: none;
+      z-index: 99999;
+    }
+
+    #no-results {
+      text-align: center;
+      padding: 40px;
+      color: #999;
+      display: none;
+    }
+    .car-total{
+        margin-top: 10px;
+    }
+    .instagram{
+        color: red;
+    }
+    
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <h1>📱 Phone&Electronics - HubKe</h1>
+  <div class="header-right">
+    <span id="user-name"></span>
+    <div class="cart-area">
+      🛒 <span id="cart-count" onclick="toggleCart()">0</span>
+      <div id="cart-box">
+        <h3>🛒 Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p class="cart-total"><strong>Total: $<span id="cart-total">0</span></strong></p>
+        <button class="close-btn" onclick="toggleCart()">Close</button>
+      </div>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <nav>
+    <div class="nav-links" id="navMenu">
+      <a onclick="openModal('contact')">Contact</a>
+      <a onclick="openModal('help')">Help</a>
+      <a onclick="openModal('about')">About</a>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </nav>
+</header>
+
+<!-- ── CONTACT MODAL ── -->
+<div class="modal-overlay" id="modal-contact">
+  <div class="modal">
+    <button class="close-modal" onclick="closeModal('contact')">✕</button>
+    <h2>📞 Contact Us</h2>
+    <p>Reach us through any of the following:</p>
+
+    <div class="contact-item">
+      <span>📱</span>
+      <div>
+        <strong>Phone / WhatsApp</strong>
+        <a href="tel:+254119762245">+254 119 762 245</a>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <span>📸</span>
+      <div>
+        <strong>Instagram</strong>
+        <a href="https://instagram.com/Richymfine" target="_blank" rel="noopener">@Richymfine</a>
+      </div>
+    </div>
+
+    <div class="contact-item">
+      <span>🕐</span>
+      <div>
+        <strong>Working Hours</strong>
+        <a>Mon - Sat: 8:00 AM – 6:00 PM</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── HELP MODAL ── -->
+<div class="modal-overlay" id="modal-help">
+  <div class="modal">
+    <button class="close-modal" onclick="closeModal('help')">✕</button>
+    <h2>❓ Help & Support</h2>
+
+    <div class="help-item">
+      <h4>🛒 How to Order</h4>
+      <p>Browse products, click "Add to Cart", then proceed to checkout. Contact us to confirm your order.</p>
+    </div>
+
+    <div class="help-item">
+      <h4>🚚 Delivery</h4>
+      <p>We deliver within Nairobi and surrounding areas. Delivery takes 1–3 business days.</p>
+    </div>
+
+    <div class="help-item">
+      <h4>💳 Payment</h4>
+      <p>We accept M-Pesa, cash on delivery, and bank transfer. Payment confirmed before dispatch.</p>
+    </div>
+
+    <div class="help-item">
+      <h4>🔄 Returns & Refunds</h4>
+      <p>Items can be returned within 7 days if faulty. Contact us via phone or Instagram to initiate a return.</p>
+    </div>
+
+    <div class="help-item">
+      <h4>📦 Out of Stock Items</h4>
+      <p>Contact us directly and we'll notify you when the item is available again.</p>
+    </div>
+
+    <div class="help-item">
+      <h4>🔧 Technical Support</h4>
+      <p>Having issues with a product? Reach us at +254119762245 or DM us on Instagram @Richymfine.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ── ABOUT MODAL ── -->
+<div class="modal-overlay" id="modal-about">
+  <div class="modal">
+    <button class="close-modal" onclick="closeModal('about')">✕</button>
+    <h2>ℹ️ About Phone HubKe</h2>
+
+    <div class="about-section">
+      <h4>🏪 Who We Are</h4>
+      <p>Phone HubKe is a Kenyan-based online electronics and accessories store offering quality products at affordable prices.</p>
+    </div>
+
+    <div class="about-section">
+      <h4>🎯 Our Mission</h4>
+      <p>To provide every Kenyan with access to genuine, affordable phone accessories and electronics delivered right to their doorstep.</p>
+    </div>
+
+    <div class="about-section">
+      <h4>📦 What We Sell</h4>
+      <p>Cables, chargers, earphones, speakers, phone cases, screen protectors, power banks, storage devices and more.</p>
+    </div>
+
+    <div class="about-section">
+      <h4>📍 Location</h4>
+      <p>Based in Nairobi, Kenya. We serve customers across the country.</p>
+    </div>
+
+    <div class="about-section">
+      <h4>🌟 Why Choose Us</h4>
+      <p>✔ Genuine products &nbsp; ✔ Affordable prices &nbsp; ✔ Fast delivery &nbsp; ✔ Friendly support &nbsp; ✔ Easy returns</p>
+    </div>
+
+    <div class="about-section">
+      <h4>📲 Follow Us</h4>
+      <p class="instagram">Instagram: <a href="https://instagram.com/Richymfine" target="_blank" rel="noopener">@Richymfine</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ── SEARCH & FILTER ── -->
+<div class="controls">
+  <input type="text" id="search-input" placeholder="🔍 Search products..." oninput="filterProducts()" />
+  <select id="category-filter" title="Filter by category" onchange="filterProducts()">
+    <option value="all">All Categories</option>
+    <option value="cables">Cables</option>
+    <option value="cases">Cases & Protection</option>
+    <option value="audio">Audio</option>
+    <option value="charging">Charging</option>
+    <option value="storage">Storage</option>
+    <option value="accessories">Accessories</option>
+  </select>
+  <select id="sort-filter" title="Sort products" onchange="filterProducts()">
+    <option value="default">Sort By</option>
+    <option value="price-low">Price: Low to High</option>
+    <option value="price-high">Price: High to Low</option>
+    <option value="name">Name A-Z</option>
+  </select>
+</div>
+
+<div class="section-title">Phone HubKe Products</div>
+<div class="product-grid" id="product-grid"></div>
+<div id="no-results">😕 No products found.</div>
+<div id="toast"></div>
+
+<script>
+
+  // ── LOGIN GUARD ──
+  if (sessionStorage.getItem('loggedIn') !== 'true') {
+    window.location.href = 'login.html';
+  }
+
+  const email = sessionStorage.getItem('userEmail');
+  if (email) document.getElementById('user-name').textContent = '👤 ' + email;
+
+  // ── PRODUCTS (20) ──
+  const products = [
+  { id:1,  name:'Type C Cable 1M',       category:'cables',      price:15, stock:266,
+    img:'https://m.media-amazon.com/images/I/61wnLMfQMEL._AC_SL1500_.jpg' },
+  { id:2,  name:'Lightning Cable',        category:'cables',      price:12, stock:180,
+    img:'https://m.media-amazon.com/images/I/71oBQVD8TuL._AC_SL1500_.jpg' },
+  { id:3,  name:'Micro USB Cable',        category:'cables',      price:8,  stock:210,
+    img:'https://m.media-amazon.com/images/I/61pQHAnvlHL._AC_SL1500_.jpg' },
+  { id:4,  name:'OTG Adapter',            category:'cables',      price:7,  stock:5,
+    img:'https://m.media-amazon.com/images/I/51vBMS5JGXL._AC_SL1500_.jpg' },
+  { id:5,  name:'Phone Case (Universal)', category:'cases',       price:10, stock:150,
+    img:'https://m.media-amazon.com/images/I/71gDFjHOALL._AC_SL1500_.jpg' },
+  { id:6,  name:'Tempered Glass',         category:'cases',       price:8,  stock:320,
+    img:'https://m.media-amazon.com/images/I/61Rg5jXDSoL._AC_SL1500_.jpg' },
+  { id:7,  name:'Wired Earphones',        category:'audio',       price:20, stock:98,
+    img:'https://m.media-amazon.com/images/I/71ooyADLMyL._AC_SL1500_.jpg' },
+  { id:8,  name:'Bluetooth Earbuds',      category:'audio',       price:45, stock:60,
+    img:'https://m.media-amazon.com/images/I/61CGHv6kmWL._AC_SL1500_.jpg' },
+  { id:9,  name:'Bluetooth Speaker',      category:'audio',       price:35, stock:40,
+    img:'https://m.media-amazon.com/images/I/71sGMXkOFqL._AC_SL1500_.jpg' },
+  { id:10, name:'Over-Ear Headphones',    category:'audio',       price:55, stock:25,
+    img:'https://m.media-amazon.com/images/I/61bFWZZJhFL._AC_SL1500_.jpg' },
+  { id:11, name:'Fast Charger 65W',       category:'charging',    price:25, stock:120,
+    img:'https://m.media-amazon.com/images/I/61SxhFJfBFL._AC_SL1500_.jpg' },
+  { id:12, name:'Wireless Charger',       category:'charging',    price:30, stock:75,
+    img:'https://m.media-amazon.com/images/I/61nzPMQHqAL._AC_SL1500_.jpg' },
+  { id:13, name:'Power Bank 20000mAh',    category:'charging',    price:40, stock:55,
+    img:'https://m.media-amazon.com/images/I/61yHMxHKFLL._AC_SL1500_.jpg' },
+  { id:14, name:'Car Charger Dual USB',   category:'charging',    price:15, stock:88,
+    img:'https://m.media-amazon.com/images/I/61PXtdvlBtL._AC_SL1500_.jpg' },
+  { id:15, name:'64GB USB Flash Drive',   category:'storage',     price:18, stock:200,
+    img:'https://m.media-amazon.com/images/I/61Ia8o4o4eL._AC_SL1500_.jpg' },
+  { id:16, name:'128GB MicroSD Card',     category:'storage',     price:22, stock:90,
+    img:'https://m.media-amazon.com/images/I/71NmE9FEopL._AC_SL1500_.jpg' },
+  { id:17, name:'Pop Socket Grip',        category:'accessories', price:5,  stock:400,
+    img:'https://m.media-amazon.com/images/I/71ZEMtCDwEL._AC_SL1500_.jpg' },
+  { id:18, name:'Phone Stand',            category:'accessories', price:12, stock:130,
+    img:'https://m.media-amazon.com/images/I/61fCQJWxe6L._AC_SL1500_.jpg' },
+  { id:19, name:'Screen Cleaner Kit',     category:'accessories', price:6,  stock:0,
+    img:'https://m.media-amazon.com/images/I/71+A3jdJLDL._AC_SL1500_.jpg' },
+  { id:20, name:'Selfie Ring Light',      category:'accessories', price:18, stock:45,
+    img:'https://m.media-amazon.com/images/I/71KHk2PKUBL._AC_SL1500_.jpg' },
+];
+
+  // ── CART ──
+  let cart = [];
+
+  function addToCart(id) {
+    const p = products.find(p => p.id === id);
+    cart.push({ name: p.name, price: p.price });
+    updateCartDisplay();
+    showToast(p.name + ' added to cart! 🛒');
+  }
+
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCartDisplay();
+  }
+
+  function updateCartDisplay() {
+    document.getElementById('cart-count').textContent = cart.length;
+    const list = document.getElementById('cart-items');
+    list.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, i) => {
+      total += item.price;
+      list.innerHTML += `
+        <li>${item.name} - $${item.price}
+          <button onclick="removeFromCart(${i})">✕</button>
+        </li>`;
+    });
+    document.getElementById('cart-total').textContent = total;
+  }
+
+  function toggleCart() {
+    const box = document.getElementById('cart-box');
+    box.style.display = box.style.display === 'none' ? 'block' : 'none';
+  }
+
+  // ── RENDER ──
+  function renderProducts(list) {
+    const grid = document.getElementById('product-grid');
+    const none = document.getElementById('no-results');
+    if (list.length === 0) { grid.innerHTML = ''; none.style.display = 'block'; return; }
+    none.style.display = 'none';
+    grid.innerHTML = list.map(p => {
+      const stockLabel = p.stock === 0 ? 'Out of Stock'
+        : p.stock < 10 ? `Only ${p.stock} left!` : `In Stock: ${p.stock}`;
+      const stockClass = p.stock === 0 ? 'out' : p.stock < 10 ? 'low' : '';
+      return `
+        <div class="product-card">
+          <img src="${p.img}" alt="${p.name}"
+            onerror="this.src='https://via.placeholder.com/300x160?text=No+Image'" />
+          <div class="card-body">
+            <h3>${p.name}</h3>
+            <div class="price">$${p.price}</div>
+            <div class="stock ${stockClass}">${stockLabel}</div>
+            <button class="add-btn" onclick="addToCart(${p.id})" ${p.stock===0?'disabled':''}>
+              ${p.stock===0 ? 'Out of Stock' : 'Add to Cart'}
+            </button>
+          </div>
+        </div>`;
+    }).join('');
+  }
+
+  // ── FILTER ──
+  function filterProducts() {
+    const search = document.getElementById('search-input').value.toLowerCase();
+    const category = document.getElementById('category-filter').value;
+    const sort = document.getElementById('sort-filter').value;
+    let filtered = products.filter(p =>
+      p.name.toLowerCase().includes(search) &&
+      (category === 'all' || p.category === category)
+    );
+    if (sort === 'price-low') filtered.sort((a,b) => a.price - b.price);
+    else if (sort === 'price-high') filtered.sort((a,b) => b.price - a.price);
+    else if (sort === 'name') filtered.sort((a,b) => a.name.localeCompare(b.name));
+    renderProducts(filtered);
+  }
+
+  // ── MODALS ──
+  function openModal(type) {
+    document.getElementById('modal-' + type).classList.add('open');
+    document.getElementById('navMenu').classList.remove('open');
+  }
+
+  function closeModal(type) {
+    document.getElementById('modal-' + type).classList.remove('open');
+  }
+
+  // Close modal when clicking outside
+  document.querySelectorAll('.modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  });
+
+  // ── TOAST ──
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.style.display = 'block';
+    setTimeout(() => t.style.display = 'none', 2500);
+  }
+
+  // ── MENU ──
+  function toggleMenu() {
+    document.getElementById('navMenu').classList.toggle('open');
+  }
+
+  // ── LOGOUT ──
+  function logout() {
+    sessionStorage.removeItem('loggedIn');
+    sessionStorage.removeItem('userEmail');
+    window.location.href = 'login.html';
+  }
+
+  // ── INIT ──
+  renderProducts(products);
+
+</script>
+</body>
+>>>>>>> 278e75dc5bdae29ef54dd7003e9b6c44096e10cd
 </html>
