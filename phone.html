@@ -11,7 +11,7 @@
       }
 
     body { 
-        font-family: Arial, sans-serif; 
+        
         background: #f4f4f4;
         padding-top: 70px; 
     }
@@ -22,12 +22,19 @@
       padding: 15px 20px;
       display: right 25%;
       justify-content: right;
-      align-items: center;
-      position: relative;
-      top: 0;
-      bottom: 0;
+      align-items: right;
+      position: fixed;
+      top: 0px;
+      left:0;
+      z-index:1000;
       width: 100%;
-      z-index: 1000;
+    }
+    .nav-bar {
+      position: fixed;
+      justify-content: space-between;
+      align-items: center;
+      top: 0; 
+      left: 0;
     }
 
     header h1 {
@@ -61,14 +68,13 @@
 
     /* ── CART ── */
     .cart-area {
-      position: flex;
+      position: absolute;
       display: block;
       color: white;
       cursor: pointer;
       font-size: 20px;
-      right: 100%;
-      left: 0%;
-
+      right: 90px;
+      bottom: 15px;
     }
 
     #cart-count {
@@ -82,7 +88,7 @@
     }
 
     #cart-box {
-      display: right;
+      display: right 100%;
       background: white;
       border: 1px solid #ccc;
       padding: 15px;
@@ -138,6 +144,10 @@
       font-size: 28px;
       cursor: pointer;
       color: red;
+      display: fixed;
+      position: absolute;
+      right: 50px;
+      bottom: 12px;
     }
 
     .nav-links {
@@ -402,7 +412,7 @@
 <body>
 
 <!-- ── HEADER ── -->
-<header>
+<header class="nav-bar">
   <h1>📱 Phone&Electronics - HubKe</h1>
   <div class="header-right">
     <span id="user-name"></span>
@@ -566,7 +576,7 @@
 
   // ── LOGIN GUARD ──
   if (sessionStorage.getItem('loggedIn') !== 'true') {
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   }
 
   const email = sessionStorage.getItem('userEmail');
@@ -575,45 +585,45 @@
   // ── PRODUCTS (20) ──
   const products = [
   { id:1,  name:'Type C Cable 1M',       category:'cables',      price:15, stock:266,
-    img:'https://m.media-amazon.com/images/I/61wnLMfQMEL._AC_SL1500_.jpg' },
+    img:'images.jpg/cable-typec.jpg' },
   { id:2,  name:'Lightning Cable',        category:'cables',      price:12, stock:180,
-    img:'https://m.media-amazon.com/images/I/71oBQVD8TuL._AC_SL1500_.jpg' },
+    img:'images.jpg/cable-lightning.jpg' },
   { id:3,  name:'Micro USB Cable',        category:'cables',      price:8,  stock:210,
-    img:'https://m.media-amazon.com/images/I/61pQHAnvlHL._AC_SL1500_.jpg' },
+    img:'images.jpg/cable-micro.jpg' },
   { id:4,  name:'OTG Adapter',            category:'cables',      price:7,  stock:5,
-    img:'https://m.media-amazon.com/images/I/51vBMS5JGXL._AC_SL1500_.jpg' },
+    img:'images.jpg/cable-otg.jpg' },
   { id:5,  name:'Phone Case (Universal)', category:'cases',       price:10, stock:150,
-    img:'https://m.media-amazon.com/images/I/71gDFjHOALL._AC_SL1500_.jpg' },
+    img:'images.jpg/case-phone.jpg' },
   { id:6,  name:'Tempered Glass',         category:'cases',       price:8,  stock:320,
-    img:'https://m.media-amazon.com/images/I/61Rg5jXDSoL._AC_SL1500_.jpg' },
+    img:'images.jpg/case-glass.jpg' },
   { id:7,  name:'Wired Earphones',        category:'audio',       price:20, stock:98,
-    img:'https://m.media-amazon.com/images/I/71ooyADLMyL._AC_SL1500_.jpg' },
+    img:'images.jpg/audio-earphones.jpg' },
   { id:8,  name:'Bluetooth Earbuds',      category:'audio',       price:45, stock:60,
-    img:'https://m.media-amazon.com/images/I/61CGHv6kmWL._AC_SL1500_.jpg' },
+    img:'images.jpg/audio-earbuds.jpg' },
   { id:9,  name:'Bluetooth Speaker',      category:'audio',       price:35, stock:40,
-    img:'https://m.media-amazon.com/images/I/71sGMXkOFqL._AC_SL1500_.jpg' },
+    img:'images.jpg/audio-speaker.jpg' },
   { id:10, name:'Over-Ear Headphones',    category:'audio',       price:55, stock:25,
-    img:'https://m.media-amazon.com/images/I/61bFWZZJhFL._AC_SL1500_.jpg' },
+    img:'images.jpg/audio-headphones.jpg' },
   { id:11, name:'Fast Charger 65W',       category:'charging',    price:25, stock:120,
-    img:'https://m.media-amazon.com/images/I/61SxhFJfBFL._AC_SL1500_.jpg' },
+    img:'images.jpg/charger-first.jpg' },
   { id:12, name:'Wireless Charger',       category:'charging',    price:30, stock:75,
-    img:'https://m.media-amazon.com/images/I/61nzPMQHqAL._AC_SL1500_.jpg' },
+    img:'images.jpg/charge-wireless.jpg' },
   { id:13, name:'Power Bank 20000mAh',    category:'charging',    price:40, stock:55,
-    img:'https://m.media-amazon.com/images/I/61yHMxHKFLL._AC_SL1500_.jpg' },
+    img:'images.jpg/charger-powerbank.jpg' },
   { id:14, name:'Car Charger Dual USB',   category:'charging',    price:15, stock:88,
-    img:'https://m.media-amazon.com/images/I/61PXtdvlBtL._AC_SL1500_.jpg' },
+    img:'images.jpg/charger-car.jpg' },
   { id:15, name:'64GB USB Flash Drive',   category:'storage',     price:18, stock:200,
-    img:'https://m.media-amazon.com/images/I/61Ia8o4o4eL._AC_SL1500_.jpg' },
+    img:'images.jpg/storage-usb.jpg' },
   { id:16, name:'128GB MicroSD Card',     category:'storage',     price:22, stock:90,
-    img:'https://m.media-amazon.com/images/I/71NmE9FEopL._AC_SL1500_.jpg' },
+    img:'images.jpg/storage-usb.jpg' },
   { id:17, name:'Pop Socket Grip',        category:'accessories', price:5,  stock:400,
-    img:'https://m.media-amazon.com/images/I/71ZEMtCDwEL._AC_SL1500_.jpg' },
+    img:'images.jpg/acc-stand.jpg' },
   { id:18, name:'Phone Stand',            category:'accessories', price:12, stock:130,
-    img:'https://m.media-amazon.com/images/I/61fCQJWxe6L._AC_SL1500_.jpg' },
-  { id:19, name:'Screen Cleaner Kit',     category:'accessories', price:6,  stock:0,
-    img:'https://m.media-amazon.com/images/I/71+A3jdJLDL._AC_SL1500_.jpg' },
+    img:'images.jpg/acc-stand.jpg' },
+  { id:19, name:'Screen Cleaner Kit',     category:'accessories', price:6,  stock:207,
+    img:'images.jpg/acc-cleaner.jpg' },
   { id:20, name:'Selfie Ring Light',      category:'accessories', price:18, stock:45,
-    img:'https://m.media-amazon.com/images/I/71KHk2PKUBL._AC_SL1500_.jpg' },
+    img:'images.jpg/acc-ringlight.jpg' },
 ];
 
   // ── CART ──
@@ -638,8 +648,7 @@
     let total = 0;
     cart.forEach((item, i) => {
       total += item.price;
-      list.innerHTML += `
-        <li>${item.name} - $${item.price}
+      list.innerHTML += `<li>${item.name} - $${item.price}
           <button onclick="removeFromCart(${i})">✕</button>
         </li>`;
     });
@@ -726,7 +735,7 @@
   function logout() {
     sessionStorage.removeItem('loggedIn');
     sessionStorage.removeItem('userEmail');
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   }
 
   // ── INIT ──
